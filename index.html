@@ -641,7 +641,7 @@
             let nextPhase;
             switch (currentState) {
                 case TIMER_STATE.ACTIVE_REP:
-                    repCount++; 
+                    // repCount++; // This was causing an issue with double counting the reps. 
                     const currentSetIndex = Math.floor((repCount - 1) / 5); 
                     const currentRepInSet = (repCount % 5) || 5;
                     if (currentSetIndex < 5) { setProgress[currentSetIndex] = currentRepInSet; updateSetBoxes(); }
